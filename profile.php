@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil</title>
     <link rel="stylesheet" href="site.css">
-    <link rel="icon" type="images/png" sizes="64x64" href="img/Logo_onglet.png" />
+    <link rel="icon" type="images/png" sizes="64x64" href="img/tabs.png" />
     <script src="scripts/profil.js"></script>
     <script src="scripts/menu.js"></script>
 

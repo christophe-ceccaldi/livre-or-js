@@ -27,11 +27,11 @@
             <p>Vous pouvez aussi laisser un commentaire, mais pour ça vous devez être connecté</p>
         </section>
 
-        <section class="centrage" id="goal">
+        <!--<section class="centrage" id="goal">
             <h2>Le but du projet:</h2>
             <p>Le but de ce projet est de créer un livre d'or avec une base de données.</p>
             <p>Une page contenant l'inscription et la connexion est présente, il fallait utiliser JS pour éviter le rechargement de page entre l'affichage de l'un des formulaires ou de l'autre.</p>
-        </section>
+        </section>-->
     </main>
     <!-- /Main -->
 

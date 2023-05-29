@@ -27,7 +27,7 @@ class User
 
             // On définit le mode d'erreur de PDO sur Exception
             $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            //echo "Connexion réussie"; 
+            echo "Connexion réussie"; 
             $this->bdd->exec("set names utf8");
         }
         // si erreur, on capture les exceptions, s'il y en a une on affiche les infos
