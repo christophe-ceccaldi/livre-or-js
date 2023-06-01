@@ -1,3 +1,18 @@
+<?php
+    session_start();
+
+    require_once 'class/User.php';
+    require_once 'class/Comment.php';
+
+    $user = new User();
+    $comment = new Comment();
+
+    // var_dump($user);
+
+    // echo $_SESSION['user'];
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -17,10 +32,6 @@
     <!-- Header -->
     <?php
     // class include
-    require_once 'class/User.php';
-    // instance
-    $user = new User();
-    session_start();
     require_once 'includes/header.php';
 
     // test if connected

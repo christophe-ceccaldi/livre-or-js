@@ -1,3 +1,17 @@
+<?php
+    session_start();
+
+    require_once 'class/User.php';
+    require_once 'class/Comment.php';
+
+    $user = new User();
+    $comment = new Comment();
+
+    // var_dump($user);
+
+    // echo $_SESSION['user'];
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -14,16 +28,8 @@
 
 <body>
 
-    <!-- Include -->
-    <?php
-    require_once 'class/Comment.php';
-    $comment = new Comment();
-    ?>
-    <!-- /Include -->
-
     <!-- Header -->
     <?php
-    session_start();
     require_once 'includes/header.php';
     ?>
     <!-- /Header -->

@@ -3,18 +3,21 @@ document.addEventListener("DOMContentLoaded", function () {
     // création des variables
     // récupération pour l'inscription
     const section_insc = document.querySelector("#inscription");
-    let form_insc = section_insc.querySelector("form");
-    let login_insc = form_insc.querySelector(".login");
-    let password_insc = form_insc.querySelector(".password");
-    let password2 = form_insc.querySelector("#password2");
-    const btnInsc = document.querySelector("#btnInsc");
+
+    let registerForm = document.querySelector("#registerForm");
+
+    let login_insc = registerForm.querySelector(".login");
+    let password_insc = registerForm.querySelector(".password");
+    let password2 = registerForm.querySelector("#password2");
     const switchConn = document.querySelector("#switchConn");
   
     // récupération pour la connexion
     const section_conn = document.querySelector("#connexion");
-    let form_conn = section_conn.querySelector("form");
-    let login_conn = form_conn.querySelector(".login");
-    let password_conn = form_conn.querySelector(".password");
+    
+    let loginForm = document.querySelector("#loginForm");
+    
+    let login_conn = loginForm.querySelector(".login");
+    let password_conn = loginForm.querySelector(".password");
     const btnConn = document.querySelector("#btnConn");
     const switchInsc = document.querySelector("#switchInsc");
   
@@ -266,27 +269,58 @@ document.addEventListener("DOMContentLoaded", function () {
     password_insc.addEventListener("blur", verifPassword);
     // password2
     password2.addEventListener("keyup", verifPassword2);
-    // btnInsc
-    btnInsc.addEventListener("click", function (e) {
-      e.preventDefault();
-      if (validation) {
-        let data = new FormData(form_insc);
-        data.append("insc", "ok");
-        fetch("verif.php", {
-          method: "POST",
-          body: data,
-        })
-          .then((response) => response.text())
-          .then((response) => {
-            response = response.trim();
-            //   console.log(response);
-            if (response === "ok") {
-              displayConn();
-            }
-          })
-          .catch((error) => console.log(error));
-      }
+
+
+    // registerForm
+    registerForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        let form = new FormData(event.currentTarget);
+
+        console.log(form.get('login'));
+
+        let url = 'register.php';
+
+        let request = new Request(url, {method: 'POST', body: form});
+
+        let response = await fetch(request);
+
+        let responseData = await response.json();
+
+        console.log(responseData);
+
+        if (responseData.success) {
+            alert("Inscription reussie !!!");
+            window.location.href = "user.php?sign=conn";
+        }
+
     });
+
+    
+    // loginForm
+    loginForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        let form = new FormData(event.currentTarget);
+
+        console.log(form.get('login'));
+
+        let url = 'connect.php';
+
+        let request = new Request(url, {method: 'POST', body: form});
+
+        let response = await fetch(request);
+
+        let responseData = await response.json();
+
+        console.log(responseData);
+
+        if (responseData.success) {
+            alert("Connexion reussie !!!");
+            window.location.href = "index.php";
+        }
+
+    });
+
+  
   
     //////////////////////////////////////////////////
     // ajout des event pour la connexion        ///////
@@ -299,7 +333,7 @@ document.addEventListener("DOMContentLoaded", function () {
     btnConn.addEventListener("click", function (e) {
       e.preventDefault();
       if (validation) {
-        let data = new FormData(form_conn);
+        let data = new FormData(loginForm);
         data.append("conn", "ok");
         fetch("verif.php", {
           method: "POST",

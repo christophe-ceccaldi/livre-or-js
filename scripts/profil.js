@@ -147,7 +147,7 @@ document.addEventListener("DOMContentLoaded", function () {
               loginButton.nextElementSibling.innerHTML =
                 "Modification réussie! Vous allez être redirigé";
               setTimeout(() => {
-                window.location.href = "profil.php";
+                window.location.href = "profile.php";
               }, 2000);
             } else if (response === "incorrect") {
               passwordInput.nextElementSibling.innerHTML =
@@ -195,7 +195,7 @@ document.addEventListener("DOMContentLoaded", function () {
               passwordButton.nextElementSibling.innerHTML =
                 "Modification réussie! Vous allez être redirigé";
               setTimeout(() => {
-                window.location.href = "profil.php";
+                window.location.href = "profile.php";
               }, 2000);
             } else if (response === "incorrect") {
               oldPasswordInput.nextElementSibling.innerHTML =

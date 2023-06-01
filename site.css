@@ -1,8 +1,5 @@
 body {
     background-color: #333;
-    /* font-family: "Open Sans", sans-serif; */
-    /* font-size: 16px;
-      color: #333; */
     margin: 0;
     padding: 0;
     font-size: 20px;
@@ -17,7 +14,6 @@ body {
     font-size: 2em;
     font-weight: bold;
     text-align: center;
-    /* color: #333; */
   }
   
   h2 {
@@ -161,7 +157,7 @@ body {
       z-index: 1;
       padding: 0 5%;
       background-color: #fafafa;
-      /* background-color: #1dc439; */
+ 
   
       transition: transform 0.6s ease-in-out;
       -webkit-transition: transform 0.6s ease-in-out;
@@ -181,8 +177,6 @@ body {
       justify-content: flex-start;
       align-items: flex-start;
       top: 0%;
-      background-color: #fafafa;
-      /* background-color: #1dc439; */
       color: #333;
     }
   
@@ -207,7 +201,8 @@ body {
   ****************** */
   
   footer {
-    background-color: #fafafa;
+    /*background-color: #fafafa;*/
+    background-color: #777;
     color: #333;
     text-align: center;
     padding: 10px;
@@ -235,7 +230,7 @@ body {
   }
   
   .link img {
-    max-width: 10vw;
+    max-width: 6vw;
     cursor: pointer;
   }
   
@@ -253,7 +248,7 @@ body {
   }
   
   #perso img {
-    max-width: 20vw;
+    max-width: 7vw;
   }
   
   /* *****************
@@ -273,7 +268,6 @@ body {
     border-radius: 15px;
     color: #333;
     font-size: 20px;
-    /* font-weight: bold; */
     padding: 10px;
     margin-bottom: 5px;
     margin-right: 10px;
@@ -313,8 +307,8 @@ body {
   ****************** */
   
   .background_form {
-    /* width: 50%; */
-    /* margin: auto; */
+    width: 70%; 
+    margin: auto; 
     padding: 20px;
     background-color: #fafafa;
     border-radius: 10px;

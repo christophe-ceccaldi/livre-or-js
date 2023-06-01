@@ -5,7 +5,7 @@ class User
 {
     /* Propriétés */
     private $id;
-    private $login;
+    public $login;
     private $password;
     private $bdd;
 
@@ -27,7 +27,7 @@ class User
 
             // On définit le mode d'erreur de PDO sur Exception
             $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            echo "Connexion réussie"; 
+            // echo "Connexion réussie"; 
             $this->bdd->exec("set names utf8");
         }
         // si erreur, on capture les exceptions, s'il y en a une on affiche les infos
@@ -61,71 +61,70 @@ class User
     public function register($login, $password)
     {
 
-        // htmlspecialchars pour les paramètres
-        $login = htmlspecialchars($login);
-        $password = htmlspecialchars($password);
         $password = password_hash($password, PASSWORD_DEFAULT);
 
-        // requête pour ajouter un utilisateur dans la base de données
-        $requete = "INSERT INTO utilisateurs (login, password) VALUES (:login, :password)";
+        try {
+            // requête pour ajouter un utilisateur dans la base de données
+            $requete = "INSERT INTO utilisateurs (login, password) VALUES (:login, :password)";
 
-        // préparation de la requête
-        $insert = $this->bdd->prepare($requete);
+            // préparation de la requête
+            $insert = $this->bdd->prepare($requete);
 
 
-        // exécution de la requête avec liaison des paramètres
+            // exécution de la requête avec liaison des paramètres
 
-        $insert->execute(array(
-            ':login' => $login,
-            ':password' => $password,
-        ));
+            $insert->execute(array(
+                ':login' => $login,
+                ':password' => $password,
+            ));
 
-        echo "ok"; // inscription réussie
+            return true;
+
+        } catch (PDOException $e) {
+            return false;
+        }
+
+        // echo "ok"; // inscription réussie
 
         // fermer la connexion
-        $this->bdd = null;
+        // $this->bdd = null;
     }
 
     // Connexion
-    public function connect($login, $password)
+    public function connect($login, $password): bool
     {
 
         // requête
         $requete = "SELECT * FROM utilisateurs where login = :login";
-
         // préparation de la requête
         $select = $this->bdd->prepare($requete);
+        $select->execute(array(':login' => $login));
 
-        // htmlspecialchars pour les paramètres
-        $login = htmlspecialchars($login);
-        $password = htmlspecialchars($password);
 
         // récupération du mot de passe avec ASSOC
-        $select->execute(array(':login' => $login));
-        $fetch_assoc = $select->fetch(PDO::FETCH_ASSOC);
-        $password_hash = $fetch_assoc['password'];
+        $user = $select->fetch(PDO::FETCH_ASSOC);
+        $password_hash = $user['password'];
 
         if (password_verify($password, $password_hash)) {
             // récupération des données 
-            $this->id = $fetch_assoc['id'];
-            $this->login = $fetch_assoc['login'];
-            $this->password = $fetch_assoc['password'];
+            $this->id = $user['id'];
+            $this->login = $user['login'];
+            $this->password = $user['password'];
+
 
             $_SESSION['user'] = [
-                'id' => $fetch_assoc['id'],
-                'login' => $fetch_assoc['login'],
-                'password' => $fetch_assoc['password'],
+                'id' => $user['id'],
+                'login' => $user['login'],
+                'password' => $user['password']
             ];
-            // connexion réussie
-            $error = "ok";
-            echo $error;
+
+            return true;
         } else {
-            $error = "incorrect";
-            echo $error; // mot de passe incorrect
+            return false;
         }
 
         // fermer la connexion
-        $this->bdd = null;
+       // $this->bdd = null;
     }
 
     // Déconnexion

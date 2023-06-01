@@ -75,9 +75,9 @@ class Comment
         while ($reponse = $select->fetch(PDO::FETCH_ASSOC)) {
 ?>
             <tr>
-                <td class='date'><?= $reponse['date'] ?></td>
-                <td class='user'><?= $reponse['login'] ?></td>
-                <td class='comm'><?= $reponse['commentaires'] ?></td>
+                <td class='date'><?= htmlspecialchars($reponse['date']) ?></td>
+                <td class='user'><?= htmlspecialchars($reponse['login']) ?></td>
+                <td class='comm'><?= htmlspecialchars($reponse['commentaires']) ?></td>
             </tr>
 <?php
         }
