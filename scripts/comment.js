@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
               btnCom.nextElementSibling.innerHTML =
                 "Votre commentaire a bien été ajouté! Vous allez être redirigé";
               setTimeout(function () {
-                window.location.href = "livre-or.php";
+                window.location.href = "https://christophe-ceccaldi.students-laplateforme.io/livre-or-js/livre-or.php";
               }, 2000);
             }
           })

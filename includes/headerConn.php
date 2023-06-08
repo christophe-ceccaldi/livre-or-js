@@ -11,7 +11,7 @@ $user = new User();
             <a href="index.php"><img src="img/tabs.png" alt=""></a>
         </div>
         <div>
-            <a class='a_head' href='livre-or.php'>Livre d'or</a>
+            <a class='a_head' href='https://christophe-ceccaldi.students-laplateforme.io/livre-or-js/livre-or.php'>Livre d'or</a>
         </div>
     </div>
 </header>

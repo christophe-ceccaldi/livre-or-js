@@ -195,7 +195,7 @@ document.addEventListener("DOMContentLoaded", function () {
               passwordButton.nextElementSibling.innerHTML =
                 "Modification réussie! Vous allez être redirigé";
               setTimeout(() => {
-                window.location.href = "profile.php";
+                window.location.href = "https://christophe-ceccaldi.students-laplateforme.io/livre-or-js/profile.php";
               }, 2000);
             } else if (response === "incorrect") {
               oldPasswordInput.nextElementSibling.innerHTML =

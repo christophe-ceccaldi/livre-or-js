@@ -17,8 +17,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Livre d'or</title>
-    <link rel="stylesheet" href="site.css">
-    <link rel="icon" type="images/png" sizes="64x64" href="img/tabs.png" />
+    <link rel="stylesheet" href="https://christophe-ceccaldi.students-laplateforme.io/livre-or-js/site.css">
+    <link rel="icon" type="images/png" sizes="64x64" href="https://christophe-ceccaldi.students-laplateforme.io/livre-or-js/img/tabs.png" />
     <script src="scripts/menu.js"></script>
 </head>
 
@@ -61,14 +61,14 @@
                 ?>
                     <br>
                     <div class="center">
-                        <a href='commentaire.php'><button>Laisser un commentaire</button></a>
+                        <a href='https://christophe-ceccaldi.students-laplateforme.io/livre-or-js/commentaire.php'><button>Laisser un commentaire</button></a>
                     </div>
                 <?php
                 } else {
                 ?>
                     <div class="center">
                         <p>Vous devez être connecté pour laisser un commentaire</p>
-                        <a href='user.php?sign=conn'><button>Se connecter</button></a>
+                        <a href='https://christophe-ceccaldi.students-laplateforme.io/livre-or-js/user.php?sign=conn'><button>Se connecter</button></a>
                     </div>
                 <?php
                 }

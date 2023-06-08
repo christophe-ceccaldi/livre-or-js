@@ -290,7 +290,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (responseData.success) {
             alert("Inscription reussie !!!");
-            window.location.href = "user.php?sign=conn";
+            window.location.href = "https://christophe-ceccaldi.students-laplateforme.io/livre-or-js/user.php?sign=conn";
         }
 
     });
@@ -315,7 +315,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (responseData.success) {
             alert("Connexion reussie !!!");
-            window.location.href = "index.php";
+            window.location.href = "https://christophe-ceccaldi.students-laplateforme.io/livre-or-js/index.php";
         }
 
     });
@@ -348,7 +348,7 @@ document.addEventListener("DOMContentLoaded", function () {
               btnConn.nextElementSibling.innerHTML =
                 "Connexion réussie, vous allez être redirigé";
               setTimeout(() => {
-                window.location.href = "index.php";
+                window.location.href = "https://christophe-ceccaldi.students-laplateforme.io/livre-or-js/index.php";
               }, 2000);
             } else if (response === "incorrect") {
               // msg de mdp incorrect

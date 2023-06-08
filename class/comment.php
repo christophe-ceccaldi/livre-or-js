@@ -11,16 +11,16 @@ class Comment
     {
         // connection à la BDD avec PDO
         // en local ////////////////////
-        $servername = 'localhost';
-        $dbname = 'livreorjs';
-        $db_username = 'root';
-        $db_password = '';
+        //$servername = 'localhost';
+        //$dbname = 'livreorjs';
+        //$db_username = 'root';
+        //$db_password = '';
 
         // en ligne ///////////////////
-        // $servername = 'localhost';
-        // $dbname = 'christophe-ceccaldi_livreorjs';
-        // $db_username = 'adminbdd';
-        // $db_password = 'basededonnees';
+        $servername = 'localhost';
+        $dbname = 'christophe-ceccaldi_livreorjs';
+        $db_username = 'cc_livreorjs';
+        $db_password = 'CCDatabase13';
 
 
         // essaie de connexion

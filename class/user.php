@@ -14,11 +14,17 @@ class User
     {
         // connection à la BDD avec PDO
         // en local ////////////////////
-        $servername = 'localhost';
-        $dbname = 'livreorjs';
-        $db_username = 'root';
-        $db_password = '';
+        //$servername = 'localhost';
+        //$dbname = 'livreorjs';
+        //$db_username = 'root';
+        //$db_password = '';
 
+        //connection à la DB en PDO en ligne
+        // en ligne ///////////////////
+        $servername = 'localhost';
+        $dbname = 'christophe-ceccaldi_livreorjs';
+        $db_username = 'cc_livreorjs';
+        $db_password = 'CCDatabase13';
        
 
         // essaie de connexion
@@ -86,8 +92,7 @@ class User
 
         // echo "ok"; // inscription réussie
 
-        // fermer la connexion
-        // $this->bdd = null;
+        
     }
 
     // Connexion

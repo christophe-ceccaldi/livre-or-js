@@ -20,7 +20,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Commentaire</title>
-    <link rel="stylesheet" href="site.css">
+    <link rel="stylesheet" href="https://christophe-ceccaldi.students-laplateforme.io/livre-or-js/site.css">
     <link rel="icon" type="images/png" sizes="64x64" href="img/tabs.png" />
     <script src="scripts/comment.js"></script>
     <script src="scripts/menu.js"></script>
